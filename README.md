@@ -2,15 +2,17 @@
 
 各 iOS App 的隐私政策等合规静态页，通过 GitHub Pages 发布。
 
+**目录命名**：使用 App **对外名称的拼音**（小写、无空格），例如「储物小精灵」→ `chuwuxiaojingling`。
+
 ## 站点结构
 
 ```text
 app-policies/
-├── index.html           # 索引页
-├── chuwubao/
-│   ├── privacy.md       # 源稿（改政策先改这里）
-│   └── privacy.html     # 发布页
-└── {other-app}/         # 后续 App 按同样结构添加
+├── index.html              # 索引页
+├── chuwuxiaojingling/      # 储物小精灵
+│   ├── privacy.md          # 源稿（改政策先改这里）
+│   └── privacy.html        # 发布页
+└── {app-pinyin}/           # 后续 App 按同样结构添加
     ├── privacy.md
     └── privacy.html
 ```
@@ -23,9 +25,9 @@ app-policies/
 
 ## 各 App 隐私政策 URL
 
-| App | App Store 填写的 URL |
-|-----|----------------------|
-| 储物小精灵 | https://castchen.github.io/app-policies/chuwubao/privacy.html |
+| App（对外名称） | 目录 | App Store 填写的 URL |
+|----------------|------|----------------------|
+| 储物小精灵 | `chuwuxiaojingling` | https://castchen.github.io/app-policies/chuwuxiaojingling/privacy.html |
 
 ## 更新流程
 
