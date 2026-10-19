@@ -28,6 +28,14 @@ app-policies/
 
 │   └── support.html
 
+├── babylog/                # 喂奶与纸尿裤 / Feed & Diaper
+
+│   ├── privacy.md
+
+│   ├── privacy.html
+
+│   └── support.html
+
 └── {app-pinyin}/           # 后续 App：同样含 privacy + support
 
     ├── privacy.md
@@ -61,6 +69,8 @@ app-policies/
 |----------------|--------------|--------------|
 
 | 储物小精灵 | https://castchen.github.io/app-policies/chuwuxiaojingling/privacy.html | https://castchen.github.io/app-policies/chuwuxiaojingling/support.html |
+
+| 喂奶与纸尿裤 / Feed & Diaper | https://castchen.github.io/app-policies/babylog/privacy.html | https://castchen.github.io/app-policies/babylog/support.html |
 
 
 
