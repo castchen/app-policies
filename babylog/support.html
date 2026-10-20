@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>喂奶与纸尿裤 - 技术支持</title>
+  <title>Feed &amp; Diaper — Support</title>
   <style>
     :root { color-scheme: light dark; }
     body {
@@ -18,7 +18,34 @@
     @media (prefers-color-scheme: dark) {
       body { color: #e8e8e8; background: #111; }
       a { color: #6eb6ff; }
+      .lang-switch { border-color: #333; }
+      .lang-switch button[aria-pressed="true"] { background: #2a2a2a; }
     }
+    .lang-switch {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #ddd;
+    }
+    .lang-switch button {
+      font: inherit;
+      font-size: 0.9rem;
+      padding: 0.35rem 0.7rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      background: transparent;
+      color: inherit;
+      cursor: pointer;
+    }
+    .lang-switch button[aria-pressed="true"] {
+      background: #e8e8e8;
+      border-color: #999;
+      font-weight: 600;
+    }
+    .lang { display: none; }
+    .lang.is-active { display: block; }
     h1 { font-size: 1.5rem; margin-bottom: 0.25rem; }
     p, li { font-size: 1rem; }
     a { color: #0066cc; }
@@ -26,12 +53,76 @@
   </style>
 </head>
 <body>
-  <h1>喂奶与纸尿裤 — 技术支持</h1>
-  <p>记录喂奶与纸尿裤、查看时间线与距上次喂奶（iOS，本地存储；本版无账号、无 iCloud 同步）。支持 Siri / 快捷指令。</p>
-  <p>如有使用问题、功能建议或错误反馈，请发送邮件至：<a href="mailto:ss19915@126.com">ss19915@126.com</a></p>
-  <p>我们会在收到邮件后尽快回复。</p>
-  <ul>
-    <li><a href="privacy.html">隐私政策</a></li>
-  </ul>
+  <nav class="lang-switch" aria-label="Language">
+    <button type="button" data-lang="en" aria-pressed="true">English</button>
+    <button type="button" data-lang="zh-Hans" aria-pressed="false">简体中文</button>
+    <button type="button" data-lang="zh-Hant" aria-pressed="false">繁體中文</button>
+  </nav>
+
+  <article class="lang is-active" data-lang="en" lang="en">
+    <h1>Feed &amp; Diaper — Support</h1>
+    <p>Log feeds and diaper changes, view a timeline and time since the last feed (iOS, on-device storage; no account and no iCloud sync in this version). Supports Siri / Shortcuts.</p>
+    <p>For questions, feature ideas, or bug reports, email <a href="mailto:ss19915@126.com">ss19915@126.com</a>.</p>
+    <p>We’ll reply as soon as we can.</p>
+    <ul>
+      <li><a href="privacy.html">Privacy Policy</a></li>
+    </ul>
+  </article>
+
+  <article class="lang" data-lang="zh-Hans" lang="zh-Hans">
+    <h1>喂奶与纸尿裤 — 技术支持</h1>
+    <p>记录喂奶与纸尿裤、查看时间线与距上次喂奶（iOS，本地存储；本版无账号、无 iCloud 同步）。支持 Siri / 快捷指令。</p>
+    <p>如有使用问题、功能建议或错误反馈，请发送邮件至：<a href="mailto:ss19915@126.com">ss19915@126.com</a></p>
+    <p>我们会在收到邮件后尽快回复。</p>
+    <ul>
+      <li><a href="privacy.html">隐私政策</a></li>
+    </ul>
+  </article>
+
+  <article class="lang" data-lang="zh-Hant" lang="zh-Hant">
+    <h1>餵奶與紙尿褲 — 技術支援</h1>
+    <p>記錄餵奶與紙尿褲、查看時間軸與距上次餵奶（iOS，本機儲存；本版無帳號、無 iCloud 同步）。支援 Siri／捷徑。</p>
+    <p>如有使用問題、功能建議或錯誤回報，請寄信至：<a href="mailto:ss19915@126.com">ss19915@126.com</a></p>
+    <p>我們會在收到郵件後儘快回覆。</p>
+    <ul>
+      <li><a href="privacy.html">隱私權政策</a></li>
+    </ul>
+  </article>
+
+  <script>
+    (function () {
+      var KEY = "babylog-lang";
+      var titles = {
+        en: "Feed & Diaper — Support",
+        "zh-Hans": "喂奶与纸尿裤 - 技术支持",
+        "zh-Hant": "餵奶與紙尿褲 - 技術支援"
+      };
+      var buttons = document.querySelectorAll(".lang-switch button");
+      var panels = document.querySelectorAll(".lang");
+
+      function setLang(lang) {
+        if (!titles[lang]) lang = "en";
+        document.documentElement.lang = lang === "en" ? "en" : lang;
+        document.title = titles[lang];
+        panels.forEach(function (el) {
+          el.classList.toggle("is-active", el.getAttribute("data-lang") === lang);
+        });
+        buttons.forEach(function (btn) {
+          btn.setAttribute("aria-pressed", btn.getAttribute("data-lang") === lang ? "true" : "false");
+        });
+        try { localStorage.setItem(KEY, lang); } catch (e) {}
+      }
+
+      buttons.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          setLang(btn.getAttribute("data-lang"));
+        });
+      });
+
+      var saved = null;
+      try { saved = localStorage.getItem(KEY); } catch (e) {}
+      setLang(saved || "en");
+    })();
+  </script>
 </body>
 </html>
