@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>喂奶与纸尿裤 - 隐私政策</title>
+  <title>Feed &amp; Diaper — Privacy Policy</title>
   <style>
     :root { color-scheme: light dark; }
     body {
@@ -18,12 +18,40 @@
     @media (prefers-color-scheme: dark) {
       body { color: #e8e8e8; background: #111; }
       a { color: #6eb6ff; }
+      .lang-switch { border-color: #333; }
+      .lang-switch button[aria-pressed="true"] { background: #2a2a2a; }
     }
+    .lang-switch {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #ddd;
+    }
+    .lang-switch button {
+      font: inherit;
+      font-size: 0.9rem;
+      padding: 0.35rem 0.7rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      background: transparent;
+      color: inherit;
+      cursor: pointer;
+    }
+    .lang-switch button[aria-pressed="true"] {
+      background: #e8e8e8;
+      border-color: #999;
+      font-weight: 600;
+    }
+    .lang { display: none; }
+    .lang.is-active { display: block; }
     h1 { font-size: 1.6rem; margin-bottom: 0.25rem; }
     .meta { color: #666; font-size: 0.95rem; margin-bottom: 2rem; }
     @media (prefers-color-scheme: dark) { .meta { color: #aaa; } }
     h2 { font-size: 1.15rem; margin-top: 2rem; border-bottom: 1px solid #ddd; padding-bottom: 0.35rem; }
     @media (prefers-color-scheme: dark) { h2 { border-bottom-color: #333; } }
+    h3 { font-size: 1rem; margin: 1.25rem 0 0.5rem; }
     p, li { font-size: 1rem; }
     ul { padding-left: 1.25rem; }
     a { color: #0066cc; }
@@ -31,66 +59,238 @@
   </style>
 </head>
 <body>
-  <h1>喂奶与纸尿裤 隐私政策</h1>
-  <p class="meta">
-    生效日期：2026-10-19<br>
-    联系邮箱：<a href="mailto:ss19915@126.com">ss19915@126.com</a>
-  </p>
+  <nav class="lang-switch" aria-label="Language">
+    <button type="button" data-lang="en" aria-pressed="true">English</button>
+    <button type="button" data-lang="zh-Hans" aria-pressed="false">简体中文</button>
+    <button type="button" data-lang="zh-Hant" aria-pressed="false">繁體中文</button>
+  </nav>
 
-  <p>喂奶与纸尿裤（繁体：餵奶與紙尿褲；英文：Feed &amp; Diaper；以下简称「本 App」）是一款用于记录喂奶与纸尿裤、查看时间线及距上次喂奶时长的 iPhone 应用。我们重视您的隐私。本政策说明本 App 如何处理与您相关的信息。</p>
+  <article class="lang is-active" data-lang="en" lang="en">
+    <h1>Feed &amp; Diaper Privacy Policy</h1>
+    <p class="meta">
+      Effective date: 2026-10-19<br>
+      Contact: <a href="mailto:ss19915@126.com">ss19915@126.com</a>
+    </p>
 
-  <h2>1. 我们收集哪些信息</h2>
-  <p><strong>本 App 不要求注册或登录，也不会将您的业务数据上传至我们的服务器或第三方业务云服务。</strong></p>
-  <p>本 App 在您的 iPhone 本地存储以下<strong>由您主动创建</strong>的内容：</p>
-  <ul>
-    <li>喂奶记录（时间、类型等您填写的内容）</li>
-    <li>纸尿裤记录（时间、类型等您填写的内容）</li>
-  </ul>
-  <p>除下文「系统能力」与「购买」所述外，我们不会主动收集可识别个人身份的信息用于广告或用户画像。</p>
-  <p>本 App <strong>无广告、无追踪 SDK、无第三方分析工具</strong>。</p>
+    <p>Feed &amp; Diaper (Simplified Chinese: 喂奶与纸尿裤; Traditional Chinese: 餵奶與紙尿褲; the “App”) is an iPhone app for logging feeds and diaper changes, viewing a timeline, and seeing time since the last feed. We take your privacy seriously. This policy explains how the App handles information related to you.</p>
 
-  <h2>2. 数据存储位置</h2>
-  <p>所有喂奶与纸尿裤记录保存在您的 iPhone 本地（SwiftData），<strong>不会同步至我们的服务器</strong>。本版<strong>不提供 iCloud 同步</strong>。</p>
-  <p>记录本机即可完成，<strong>记一笔本身可离线使用</strong>。</p>
+    <h2>1. Information We Collect</h2>
+    <p><strong>The App does not require an account or sign-in, and does not upload your app data to our servers or to third-party business cloud services.</strong></p>
+    <p>On your iPhone, the App stores the following content that <strong>you create</strong>:</p>
+    <ul>
+      <li>Feed records (time, type, and other details you enter)</li>
+      <li>Diaper records (time, type, and other details you enter)</li>
+    </ul>
+    <p>Except as described under “System Capabilities” and “Purchases” below, we do not collect personally identifiable information for advertising or profiling.</p>
+    <p>The App has <strong>no ads, no tracking SDKs, and no third-party analytics</strong>.</p>
 
-  <h2>3. 系统能力与权限</h2>
-  <h3 style="font-size:1rem;margin:1.25rem 0 0.5rem;">Siri 与快捷指令</h3>
-  <p>本 App 支持通过 <strong>Siri / 快捷指令</strong>（系统 App Intents）创建或查询记录。语音与指令由 <strong>iOS 系统处理</strong>；我们不运营语音云，也不会把您的业务数据送到我们自己的服务器。</p>
-  <h3 style="font-size:1rem;margin:1.25rem 0 0.5rem;">网络使用</h3>
-  <p>以下情况可能使用网络，<strong>与您的喂奶/纸尿裤业务数据无关</strong>：</p>
-  <ul>
-    <li>从 App Store 检查或下载本 App 更新</li>
-    <li>苹果内购的购买、恢复与收据校验（由苹果系统处理）</li>
-    <li>Siri / 快捷指令等系统能力（由系统决定是否联网）</li>
-  </ul>
-  <p>在飞行模式下，本 App 的核心功能（本地查看与编辑记录、时间线、距上次喂奶等）仍可正常使用；购买/恢复及依赖系统联网的能力可能受限。</p>
+    <h2>2. Where Data Is Stored</h2>
+    <p>All feed and diaper records are stored locally on your iPhone (SwiftData) and are <strong>not synced to our servers</strong>. This version <strong>does not offer iCloud sync</strong>.</p>
+    <p>Logging entries works on-device; <strong>recording itself can be done offline</strong>.</p>
 
-  <h2>4. 购买与试用</h2>
-  <p>本 App 可免费下载。完整新建记录等能力通过苹果内购提供：</p>
-  <ul>
-    <li><strong>7 天试用</strong>（试用期内免费体验）</li>
-    <li><strong>一次买断解锁</strong></li>
-  </ul>
-  <p>试用到期后为软锁：您仍可查看与修改已有历史记录，但<strong>不能新建</strong>记录，直至完成解锁购买。</p>
-  <p>购买与恢复购买均通过 <strong>Apple</strong> 完成；相关交易由苹果处理。我们<strong>不会</strong>因此将您的喂奶/纸尿裤业务数据上传至我们的服务器。</p>
+    <h2>3. System Capabilities &amp; Permissions</h2>
+    <h3>Siri &amp; Shortcuts</h3>
+    <p>The App supports creating or querying records via <strong>Siri / Shortcuts</strong> (system App Intents). Speech and commands are handled by <strong>iOS</strong>; we do not operate a voice cloud and do not send your app data to our own servers.</p>
+    <h3>Network Use</h3>
+    <p>Network access may be used in the following cases, which are <strong>unrelated to your feed/diaper app data</strong>:</p>
+    <ul>
+      <li>Checking for or downloading App updates from the App Store</li>
+      <li>In-app purchase, restore, and receipt validation (handled by Apple)</li>
+      <li>Siri / Shortcuts and other system features (whether they use the network is up to the system)</li>
+    </ul>
+    <p>In Airplane Mode, core features (viewing and editing local records, timeline, time since last feed, and so on) still work; purchase/restore and features that depend on system networking may be limited.</p>
 
-  <h2>5. 数据保留与删除</h2>
-  <ul>
-    <li>数据随 App 卸载而删除（除非您已通过系统换机迁移、设备备份等方式保留）。</li>
-    <li>本版无自有云端账号；卸载 App 或设备丢失且未做系统备份时，数据可能无法恢复。</li>
-  </ul>
+    <h2>4. Purchases &amp; Trial</h2>
+    <p>The App is free to download. Full ability to create new records is provided via Apple In-App Purchase:</p>
+    <ul>
+      <li><strong>7-day trial</strong> (free during the trial)</li>
+      <li><strong>One-time unlock</strong></li>
+    </ul>
+    <p>After the trial ends, a soft lock applies: you can still view and edit existing history, but you <strong>cannot create new</strong> records until you unlock.</p>
+    <p>Purchase and restore are handled by <strong>Apple</strong>. We do <strong>not</strong> upload your feed/diaper app data to our servers because of a purchase.</p>
 
-  <h2>6. 第三方服务</h2>
-  <p>本 App <strong>业务功能不依赖</strong>需上传业务数据至第三方的云服务或分析平台。</p>
-  <p>内购相关能力由 <strong>Apple</strong> 提供；Siri / 快捷指令由 <strong>iOS 系统</strong>提供。我们不对苹果或系统侧另行适用的政策负责，请同时参阅苹果相关条款。</p>
+    <h2>5. Retention &amp; Deletion</h2>
+    <ul>
+      <li>Data is deleted when you uninstall the App (unless retained via device migration, system backup, or similar).</li>
+      <li>This version has no cloud account of ours; if you uninstall the App or lose the device without a system backup, data may be unrecoverable.</li>
+    </ul>
 
-  <h2>7. 儿童隐私</h2>
-  <p>本 App 不面向 13 周岁以下儿童主动收集个人信息；业务数据均由设备持有人本地创建与管理。记录内容可能与婴幼儿照护相关，但由成人用户在本机录入，我们不会据此收集儿童个人信息至我们的服务器。</p>
+    <h2>6. Third-Party Services</h2>
+    <p>The App’s <strong>core features do not depend on</strong> third-party cloud or analytics services that would upload your app data.</p>
+    <p>In-app purchases are provided by <strong>Apple</strong>; Siri / Shortcuts are provided by <strong>iOS</strong>. We are not responsible for Apple’s or the system’s own policies; please also review Apple’s terms where applicable.</p>
 
-  <h2>8. 政策变更</h2>
-  <p>我们可能更新本政策并在本页面修订「生效日期」。重大变更时，我们会在 App 内关于页或 App Store 更新说明中提示。</p>
+    <h2>7. Children’s Privacy</h2>
+    <p>The App does not knowingly collect personal information from children under 13; app data is created and managed locally by the device owner. Records may relate to infant care but are entered on-device by an adult user; we do not collect children’s personal information onto our servers on that basis.</p>
 
-  <h2>9. 联系我们</h2>
-  <p>如对本政策有疑问，请发送邮件至：<a href="mailto:ss19915@126.com">ss19915@126.com</a>。</p>
+    <h2>8. Changes to This Policy</h2>
+    <p>We may update this policy and revise the “Effective date” on this page. For material changes, we may note them in the App’s About screen or App Store release notes.</p>
+
+    <h2>9. Contact Us</h2>
+    <p>Questions about this policy: <a href="mailto:ss19915@126.com">ss19915@126.com</a>.</p>
+  </article>
+
+  <article class="lang" data-lang="zh-Hans" lang="zh-Hans">
+    <h1>喂奶与纸尿裤 隐私政策</h1>
+    <p class="meta">
+      生效日期：2026-10-19<br>
+      联系邮箱：<a href="mailto:ss19915@126.com">ss19915@126.com</a>
+    </p>
+
+    <p>喂奶与纸尿裤（繁体：餵奶與紙尿褲；英文：Feed &amp; Diaper；以下简称「本 App」）是一款用于记录喂奶与纸尿裤、查看时间线及距上次喂奶时长的 iPhone 应用。我们重视您的隐私。本政策说明本 App 如何处理与您相关的信息。</p>
+
+    <h2>1. 我们收集哪些信息</h2>
+    <p><strong>本 App 不要求注册或登录，也不会将您的业务数据上传至我们的服务器或第三方业务云服务。</strong></p>
+    <p>本 App 在您的 iPhone 本地存储以下<strong>由您主动创建</strong>的内容：</p>
+    <ul>
+      <li>喂奶记录（时间、类型等您填写的内容）</li>
+      <li>纸尿裤记录（时间、类型等您填写的内容）</li>
+    </ul>
+    <p>除下文「系统能力」与「购买」所述外，我们不会主动收集可识别个人身份的信息用于广告或用户画像。</p>
+    <p>本 App <strong>无广告、无追踪 SDK、无第三方分析工具</strong>。</p>
+
+    <h2>2. 数据存储位置</h2>
+    <p>所有喂奶与纸尿裤记录保存在您的 iPhone 本地（SwiftData），<strong>不会同步至我们的服务器</strong>。本版<strong>不提供 iCloud 同步</strong>。</p>
+    <p>记录本机即可完成，<strong>记一笔本身可离线使用</strong>。</p>
+
+    <h2>3. 系统能力与权限</h2>
+    <h3>Siri 与快捷指令</h3>
+    <p>本 App 支持通过 <strong>Siri / 快捷指令</strong>（系统 App Intents）创建或查询记录。语音与指令由 <strong>iOS 系统处理</strong>；我们不运营语音云，也不会把您的业务数据送到我们自己的服务器。</p>
+    <h3>网络使用</h3>
+    <p>以下情况可能使用网络，<strong>与您的喂奶/纸尿裤业务数据无关</strong>：</p>
+    <ul>
+      <li>从 App Store 检查或下载本 App 更新</li>
+      <li>苹果内购的购买、恢复与收据校验（由苹果系统处理）</li>
+      <li>Siri / 快捷指令等系统能力（由系统决定是否联网）</li>
+    </ul>
+    <p>在飞行模式下，本 App 的核心功能（本地查看与编辑记录、时间线、距上次喂奶等）仍可正常使用；购买/恢复及依赖系统联网的能力可能受限。</p>
+
+    <h2>4. 购买与试用</h2>
+    <p>本 App 可免费下载。完整新建记录等能力通过苹果内购提供：</p>
+    <ul>
+      <li><strong>7 天试用</strong>（试用期内免费体验）</li>
+      <li><strong>一次买断解锁</strong></li>
+    </ul>
+    <p>试用到期后为软锁：您仍可查看与修改已有历史记录，但<strong>不能新建</strong>记录，直至完成解锁购买。</p>
+    <p>购买与恢复购买均通过 <strong>Apple</strong> 完成；相关交易由苹果处理。我们<strong>不会</strong>因此将您的喂奶/纸尿裤业务数据上传至我们的服务器。</p>
+
+    <h2>5. 数据保留与删除</h2>
+    <ul>
+      <li>数据随 App 卸载而删除（除非您已通过系统换机迁移、设备备份等方式保留）。</li>
+      <li>本版无自有云端账号；卸载 App 或设备丢失且未做系统备份时，数据可能无法恢复。</li>
+    </ul>
+
+    <h2>6. 第三方服务</h2>
+    <p>本 App <strong>业务功能不依赖</strong>需上传业务数据至第三方的云服务或分析平台。</p>
+    <p>内购相关能力由 <strong>Apple</strong> 提供；Siri / 快捷指令由 <strong>iOS 系统</strong>提供。我们不对苹果或系统侧另行适用的政策负责，请同时参阅苹果相关条款。</p>
+
+    <h2>7. 儿童隐私</h2>
+    <p>本 App 不面向 13 周岁以下儿童主动收集个人信息；业务数据均由设备持有人本地创建与管理。记录内容可能与婴幼儿照护相关，但由成人用户在本机录入，我们不会据此收集儿童个人信息至我们的服务器。</p>
+
+    <h2>8. 政策变更</h2>
+    <p>我们可能更新本政策并在本页面修订「生效日期」。重大变更时，我们会在 App 内关于页或 App Store 更新说明中提示。</p>
+
+    <h2>9. 联系我们</h2>
+    <p>如对本政策有疑问，请发送邮件至：<a href="mailto:ss19915@126.com">ss19915@126.com</a>。</p>
+  </article>
+
+  <article class="lang" data-lang="zh-Hant" lang="zh-Hant">
+    <h1>餵奶與紙尿褲 隱私權政策</h1>
+    <p class="meta">
+      生效日期：2026-10-19<br>
+      聯絡信箱：<a href="mailto:ss19915@126.com">ss19915@126.com</a>
+    </p>
+
+    <p>餵奶與紙尿褲（簡體：喂奶与纸尿裤；英文：Feed &amp; Diaper；以下稱「本 App」）是一款用於記錄餵奶與紙尿褲、查看時間軸及距上次餵奶時長的 iPhone 應用程式。我們重視您的隱私。本政策說明本 App 如何處理與您相關的資訊。</p>
+
+    <h2>1. 我們收集哪些資訊</h2>
+    <p><strong>本 App 不要求註冊或登入，也不會將您的業務資料上傳至我們的伺服器或第三方業務雲端服務。</strong></p>
+    <p>本 App 在您的 iPhone 本機儲存以下<strong>由您主動建立</strong>的內容：</p>
+    <ul>
+      <li>餵奶記錄（時間、類型等您填寫的內容）</li>
+      <li>紙尿褲記錄（時間、類型等您填寫的內容）</li>
+    </ul>
+    <p>除下文「系統能力」與「購買」所述外，我們不會主動收集可識別個人身分的資訊用於廣告或使用者輪廓分析。</p>
+    <p>本 App <strong>無廣告、無追蹤 SDK、無第三方分析工具</strong>。</p>
+
+    <h2>2. 資料儲存位置</h2>
+    <p>所有餵奶與紙尿褲記錄保存在您的 iPhone 本機（SwiftData），<strong>不會同步至我們的伺服器</strong>。本版<strong>不提供 iCloud 同步</strong>。</p>
+    <p>記錄可在本機完成，<strong>記一筆本身可離線使用</strong>。</p>
+
+    <h2>3. 系統能力與權限</h2>
+    <h3>Siri 與捷徑</h3>
+    <p>本 App 支援透過 <strong>Siri / 捷徑</strong>（系統 App Intents）建立或查詢記錄。語音與指令由 <strong>iOS 系統處理</strong>；我們不營運語音雲端，也不會把您的業務資料送到我們自己的伺服器。</p>
+    <h3>網路使用</h3>
+    <p>以下情況可能使用網路，<strong>與您的餵奶／紙尿褲業務資料無關</strong>：</p>
+    <ul>
+      <li>從 App Store 檢查或下載本 App 更新</li>
+      <li>蘋果 App 內購買的購買、回復與收據驗證（由蘋果系統處理）</li>
+      <li>Siri／捷徑等系統能力（是否連網由系統決定）</li>
+    </ul>
+    <p>在飛航模式下，本 App 的核心功能（本機查看與編輯記錄、時間軸、距上次餵奶等）仍可正常使用；購買／回復及依賴系統連網的能力可能受限。</p>
+
+    <h2>4. 購買與試用</h2>
+    <p>本 App 可免費下載。完整新建記錄等能力透過蘋果 App 內購買提供：</p>
+    <ul>
+      <li><strong>7 天試用</strong>（試用期間免費體驗）</li>
+      <li><strong>一次買斷解鎖</strong></li>
+    </ul>
+    <p>試用到期後為軟鎖定：您仍可查看與修改既有歷史記錄，但<strong>不能新建</strong>記錄，直至完成解鎖購買。</p>
+    <p>購買與回復購買均透過 <strong>Apple</strong> 完成；相關交易由蘋果處理。我們<strong>不會</strong>因此將您的餵奶／紙尿褲業務資料上傳至我們的伺服器。</p>
+
+    <h2>5. 資料保留與刪除</h2>
+    <ul>
+      <li>資料隨 App 解除安裝而刪除（除非您已透過系統換機移轉、裝置備份等方式保留）。</li>
+      <li>本版無自有雲端帳號；解除安裝 App 或裝置遺失且未做系統備份時，資料可能無法復原。</li>
+    </ul>
+
+    <h2>6. 第三方服務</h2>
+    <p>本 App <strong>業務功能不依賴</strong>需上傳業務資料至第三方的雲端服務或分析平台。</p>
+    <p>App 內購買相關能力由 <strong>Apple</strong> 提供；Siri／捷徑由 <strong>iOS 系統</strong>提供。我們不對蘋果或系統端另行適用的政策負責，請同時參閱蘋果相關條款。</p>
+
+    <h2>7. 兒童隱私</h2>
+    <p>本 App 不面向 13 歲以下兒童主動收集個人資訊；業務資料均由裝置持有人於本機建立與管理。記錄內容可能與嬰幼兒照護相關，但由成人使用者於本機輸入，我們不會據此將兒童個人資訊收集至我們的伺服器。</p>
+
+    <h2>8. 政策變更</h2>
+    <p>我們可能更新本政策並在本頁修訂「生效日期」。重大變更時，我們會在 App 內關於頁或 App Store 更新說明中提示。</p>
+
+    <h2>9. 聯絡我們</h2>
+    <p>如對本政策有疑問，請寄信至：<a href="mailto:ss19915@126.com">ss19915@126.com</a>。</p>
+  </article>
+
+  <script>
+    (function () {
+      var KEY = "babylog-lang";
+      var titles = {
+        en: "Feed & Diaper — Privacy Policy",
+        "zh-Hans": "喂奶与纸尿裤 - 隐私政策",
+        "zh-Hant": "餵奶與紙尿褲 - 隱私權政策"
+      };
+      var buttons = document.querySelectorAll(".lang-switch button");
+      var panels = document.querySelectorAll(".lang");
+
+      function setLang(lang) {
+        if (!titles[lang]) lang = "en";
+        document.documentElement.lang = lang === "en" ? "en" : lang;
+        document.title = titles[lang];
+        panels.forEach(function (el) {
+          el.classList.toggle("is-active", el.getAttribute("data-lang") === lang);
+        });
+        buttons.forEach(function (btn) {
+          btn.setAttribute("aria-pressed", btn.getAttribute("data-lang") === lang ? "true" : "false");
+        });
+        try { localStorage.setItem(KEY, lang); } catch (e) {}
+      }
+
+      buttons.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          setLang(btn.getAttribute("data-lang"));
+        });
+      });
+
+      var saved = null;
+      try { saved = localStorage.getItem(KEY); } catch (e) {}
+      setLang(saved || "en");
+    })();
+  </script>
 </body>
 </html>
